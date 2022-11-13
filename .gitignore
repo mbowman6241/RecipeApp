@@ -1,0 +1,48 @@
+# See http://help.github.com/ignore-files/ for more about ignoring files.
+# Visual Studio Code
+/RecipeUI/.vscode/*
+/RecipeApi/.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+/RecipeUI/.history/*
+/RecipeApi/.history/*
+
+# RecipeApi files
+/RecipeApi/bin/*
+/RecipeApi/bin/Debug/*
+
+# RecipeUI files
+# Compiled output
+/RecipeUI/dist
+/RecipeUI/tmp
+/RecipeUI/out-tsc
+/RecipeUI/bazel-out
+
+# Node
+/RecipeUI/node_modules
+/RecipeUI/pm-debug.log
+/RecipeUI/arn-error.log
+
+# IDEs and editors
+.idea/
+.project
+.classpath
+.c9/
+*.launch
+.settings/
+*.sublime-workspace
+
+# Miscellaneous
+/RecipeUI/.angular/cache
+/RecipeUI/.sass-cache/
+/RecipeUI/connect.lock
+/RecipeUI/coverage
+/RecipeUI/libpeerconnection.log
+/RecipeUI/testem.log
+/RecipeUI/typings
+
+# System files
+/RecipeUI/.DS_Store
+/RecipeUI/Thumbs.db
