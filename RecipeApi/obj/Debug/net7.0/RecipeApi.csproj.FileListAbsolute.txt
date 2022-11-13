@@ -276,3 +276,4 @@ D:\Coding\RecipeApp\RecipeApi\bin\Debug\net7.0\runtimes\unix\lib\net6.0\System.D
 D:\Coding\RecipeApp\RecipeApi\bin\Debug\net7.0\runtimes\win\lib\net6.0\System.Drawing.Common.dll
 D:\Coding\RecipeApp\RecipeApi\bin\Debug\net7.0\runtimes\win\lib\net6.0\System.Security.Cryptography.ProtectedData.dll
 D:\Coding\RecipeApp\RecipeApi\bin\Debug\net7.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
+D:\Coding\RecipeApp\RecipeApi\bin\Debug\net7.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll

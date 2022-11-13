@@ -22,8 +22,8 @@
 
 # Node
 /RecipeUI/node_modules
-/RecipeUI/pm-debug.log
-/RecipeUI/arn-error.log
+/RecipeUI/npm-debug.log
+/RecipeUI/warn-error.log
 
 # IDEs and editors
 .idea/

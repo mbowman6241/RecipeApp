@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "hS8Iyj6Kjh5DQQ+ONQhY5jZO6uN7afxkWhz8rQy+CF+mXzNANTdGl9P1kGDDxq51VDwS79iEzdy5uyNTCR/2xA==",
+  "dgSpecHash": "PyzR9K9hqriGXF2PIYPtZVL+9E5ZlLn+9M/RJIUKR37hUBP4IRo67nOfzmQ4CSa4TE/dhjtErZm6jIRlgrrjWQ==",
   "success": true,
   "projectFilePath": "D:\\Coding\\RecipeApp\\RecipeApi\\RecipeApi.csproj",
   "expectedPackageFiles": [
@@ -10,6 +10,7 @@
     "C:\\Users\\Matthew\\.nuget\\packages\\messagepack\\2.1.152\\messagepack.2.1.152.nupkg.sha512",
     "C:\\Users\\Matthew\\.nuget\\packages\\messagepack.annotations\\2.1.152\\messagepack.annotations.2.1.152.nupkg.sha512",
     "C:\\Users\\Matthew\\.nuget\\packages\\messagepackanalyzer\\2.1.152\\messagepackanalyzer.2.1.152.nupkg.sha512",
+    "C:\\Users\\Matthew\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\7.0.0\\microsoft.aspnetcore.authentication.jwtbearer.7.0.0.nupkg.sha512",
     "C:\\Users\\Matthew\\.nuget\\packages\\microsoft.aspnetcore.openapi\\7.0.0\\microsoft.aspnetcore.openapi.7.0.0.nupkg.sha512",
     "C:\\Users\\Matthew\\.nuget\\packages\\microsoft.aspnetcore.razor.language\\6.0.0\\microsoft.aspnetcore.razor.language.6.0.0.nupkg.sha512",
     "C:\\Users\\Matthew\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\5.0.0\\microsoft.bcl.asyncinterfaces.5.0.0.nupkg.sha512",
