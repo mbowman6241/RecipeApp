@@ -3,6 +3,7 @@ using System.Security.Claims;
 using System.Text;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.IdentityModel.Tokens;
+using RecipeApi.Data;
 using RecipeApi.Models;
 
 namespace RecipeApi.Controllers
@@ -11,19 +12,25 @@ namespace RecipeApi.Controllers
     [ApiController]
     public class AuthController : Controller
     {
-
-        [HttpPost("login")]
-        public IActionResult Login([FromBody] User user)
+        private readonly UsersDbContext _usersDbContext;
+        public AuthController(UsersDbContext usersDbContext)
         {
-            if (user is null)
+            _usersDbContext = usersDbContext;
+        }
+        [HttpPost("login")]
+        public ActionResult Login([FromBody] User user)
+        {
+            var preAuthUser = _usersDbContext.Users.FirstOrDefault(u => u.UserName == user.UserName && u.Email == user.Email);
+
+            if (preAuthUser == null)
             {
-                return BadRequest("Invalid client request");
-            } 
-            else 
-            if (user.UserName == "test" && user.Email == "test@123")
-            {          
+                return Unauthorized();
+            }
+            else
+            {
                 var secretKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("superSecretKey@345"));
                 var signinCredentials = new SigningCredentials(secretKey, SecurityAlgorithms.HmacSha256);
+                //TODO: Need to remove localhost
                 var tokeOptions = new JwtSecurityToken(
                     issuer: "https://localhost:5165",
                     audience: "https://localhost:5165",
@@ -32,9 +39,9 @@ namespace RecipeApi.Controllers
                     signingCredentials: signinCredentials
                 );
                 var tokenString = new JwtSecurityTokenHandler().WriteToken(tokeOptions);
+
                 return Ok(new AuthenticatedResponse { Token = tokenString });
             }
-            return Unauthorized();
         }
     }
 }

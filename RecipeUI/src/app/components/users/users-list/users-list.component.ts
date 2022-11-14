@@ -19,7 +19,7 @@ export class UsersListComponent implements OnInit {
           this.users = users;
         },
         error:(response) => {
-          console.log(response);
+          console.log(JSON.stringify(response));
         }
       })
   }

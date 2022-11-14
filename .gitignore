@@ -12,6 +12,8 @@
 # RecipeApi files
 /RecipeApi/bin/*
 /RecipeApi/bin/Debug/*
+/RecipeApi/obj/*
+/RecipeApi/obj/Debug/*
 
 # RecipeUI files
 # Compiled output
