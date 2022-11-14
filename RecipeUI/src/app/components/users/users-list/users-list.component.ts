@@ -18,7 +18,7 @@ export class UsersListComponent implements OnInit {
         next: (users) => {
           this.users = users;
         },
-        error:(response) => {
+        error: (response) => {
           console.log(JSON.stringify(response));
         }
       })

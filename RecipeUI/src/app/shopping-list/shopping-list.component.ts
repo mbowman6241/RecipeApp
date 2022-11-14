@@ -9,16 +9,17 @@ import { ShoppingListService } from './service/shopping-list.service';
   templateUrl: './shopping-list.component.html',
   styleUrls: ['./shopping-list.component.css']
 })
+
 export class ShoppingListComponent implements OnInit {
 
-  ingredients!: Observable<{ ingredients: Ingredient[]}>;
+  ingredients!: Observable<{ ingredients: Ingredient[] }>;
 
-  constructor( private slService: ShoppingListService, private store: Store<{shoppingList: {ingredients: Ingredient[] }}>) { }
+  constructor(private slService: ShoppingListService, private store: Store<{ shoppingList: { ingredients: Ingredient[] } }>) { }
 
   ngOnInit(): void {
     this.ingredients = this.store.select('shoppingList');
   }
-  
+
   onEditItem(index: number) {
     this.slService.startedEditing.next(index);
   }

@@ -14,13 +14,17 @@ export class RecipelistComponent implements OnInit, OnDestroy {
 
   recipes: Recipe[] = [];
   subscription: Subscription;
-  
-  constructor(private jwtHelper: JwtHelperService, private router: Router, private route: ActivatedRoute,
-    private recipeService: RecipeService) { 
-      this.subscription = Subscription.EMPTY;
-    }
+  router: string;
 
-  ngOnInit() {
+  constructor(private jwtHelper: JwtHelperService, private _router: Router, private route: ActivatedRoute,
+    private recipeService: RecipeService) {
+
+    this.subscription = Subscription.EMPTY;
+    this.router = _router.url;
+    
+  }
+
+  ngOnInit(): void {
     this.subscription = this.recipeService.recipesChanged
       .subscribe(
         (recipes: Recipe[]) => {
@@ -31,7 +35,7 @@ export class RecipelistComponent implements OnInit, OnDestroy {
   }
 
   onNewRecipe() {
-    this.router.navigate(['new'], {relativeTo: this.route});
+    this._router.navigate(['new'], { relativeTo: this.route });
   }
 
   isUserAuthenticated() {

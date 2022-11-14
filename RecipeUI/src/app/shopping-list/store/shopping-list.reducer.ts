@@ -1,4 +1,3 @@
-
 import { Ingredient } from 'src/app/models/ingredient.model';
 import * as ShoppingListActions from './shopping-list.actions';
 

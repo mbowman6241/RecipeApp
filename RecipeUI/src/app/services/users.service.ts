@@ -7,12 +7,13 @@ import { User } from '../models/users.model';
 @Injectable({
   providedIn: 'root'
 })
+
 export class UsersService {
 
   baseApiUrl: string = environment.baseApiUrl;
   constructor(private http: HttpClient) { }
 
-  getAllUsers(): Observable<User[]>{
+  getAllUsers(): Observable<User[]> {
     return this.http.get<User[]>(this.baseApiUrl + '/api/Users');
   }
 }

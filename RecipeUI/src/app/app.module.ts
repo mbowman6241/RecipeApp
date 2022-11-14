@@ -12,8 +12,7 @@ import { HomepageComponent } from './components/homepage/homepage.component';
 import { JwtModule } from '@auth0/angular-jwt';
 import { ToastrModule } from 'ngx-toastr';
 import { AuthGuard } from './guard/auth-guard.service';
-import { ShoppingEditComponent } from './shopping-list/shopping-edit/shopping-edit.component';
-import { ShopingListComponent } from './shopping-list/shoping-list/shoping-list.component';
+import { SharedModule } from './shared/shared.module';
 
 export function tokenGetter() {
   return localStorage.getItem("jwt");
@@ -23,10 +22,8 @@ export function tokenGetter() {
   declarations: [
     AppComponent,
     UsersListComponent,
-    LoginComponent,
-    HomepageComponent,
-    ShoppingEditComponent,
-    ShopingListComponent
+    LoginComponent
+    
   ],
   imports: [
     BrowserModule,
@@ -42,7 +39,8 @@ export function tokenGetter() {
         disallowedRoutes: []
       }
   }),
-  ToastrModule.forRoot()
+  ToastrModule.forRoot(),
+  SharedModule
   ],
   providers: [AuthGuard],
   bootstrap: [AppComponent]

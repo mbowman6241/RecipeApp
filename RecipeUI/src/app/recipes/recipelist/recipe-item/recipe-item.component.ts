@@ -6,7 +6,8 @@ import { Recipe } from 'src/app/models/recipe.model';
   templateUrl: './recipe-item.component.html',
   styleUrls: ['./recipe-item.component.css']
 })
-export class RecipeItemComponent implements OnInit  {
+
+export class RecipeItemComponent implements OnInit {
   @Input() recipe!: Recipe;
   @Input() index!: number;
 

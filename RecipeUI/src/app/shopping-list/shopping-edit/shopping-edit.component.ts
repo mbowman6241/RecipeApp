@@ -11,28 +11,31 @@ import * as ShoppingListActions from "../store/shopping-list.actions";
   templateUrl: './shopping-edit.component.html',
   styleUrls: ['./shopping-edit.component.css']
 })
+
 export class ShoppingEditComponent implements OnInit, OnDestroy {
+
   @ViewChild('f', { static: false }) slForm!: NgForm;
   subscription!: Subscription;
   editMode = false;
   editedItemIndex!: number;
   editedItem!: Ingredient;
-  
-  constructor(private slService: ShoppingListService, private store: Store<{shoppingList: {ingredients: Ingredient[] } }>) { }
+
+  constructor(private slService: ShoppingListService, private store: Store<{ shoppingList: { ingredients: Ingredient[] } }>) { }
 
   ngOnInit() {
     this.subscription = this.slService.startedEditing
-    .subscribe(
-      (index: number) => {
-        this.editedItemIndex = index;
-        this.editMode = true;
-        this.editedItem = this.slService.getIngredient(index);
-        this.slForm.setValue({
-          name: this.editedItem.name
-        })
-      }
-    );
+      .subscribe(
+        (index: number) => {
+          this.editedItemIndex = index;
+          this.editMode = true;
+          this.editedItem = this.slService.getIngredient(index);
+          this.slForm.setValue({
+            name: this.editedItem.name
+          })
+        }
+      );
   }
+  
   onSubmit(form: NgForm) {
     const value = form.value;
     const newIngredient = new Ingredient(value.name);

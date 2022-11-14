@@ -23,21 +23,21 @@ export class LoginComponent {
 
   public login = (form: NgForm) => {
     const credentials = JSON.stringify(form.value);
-  
+
     this.authService.login(credentials)
-    .subscribe({
-      next: (response) => {
-        console.log('auth success response: ' + response);
-        const token = (<any>response).token;
-        localStorage.setItem("jwt", token);
-        this.invalidLogin = false;
-        this.toastr.success("Logged In successfully");
-        this.router.navigate(["/recipes"]);
-      },
-      error:(response) => {
-        console.log('error auth response: ' + JSON.stringify(response));
-        this.invalidLogin = true;
-      }
-    })
+      .subscribe({
+        next: (response) => {
+          console.log('auth success response: ' + response);
+          const token = (<any>response).token;
+          localStorage.setItem("jwt", token);
+          this.invalidLogin = false;
+          this.toastr.success("Logged In successfully");
+          this.router.navigate(["/"]);
+        },
+        error: (response) => {
+          console.log('error auth response: ' + JSON.stringify(response));
+          this.invalidLogin = true;
+        }
+      })
   }
 }

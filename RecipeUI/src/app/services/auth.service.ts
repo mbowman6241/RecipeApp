@@ -6,6 +6,7 @@ import { environment } from 'src/environments/environment';
 @Injectable({
   providedIn: 'root'
 })
+
 export class AuthService {
 
   baseApiUrl: string = environment.baseApiUrl;
