@@ -12,6 +12,8 @@ import { HomepageComponent } from './components/homepage/homepage.component';
 import { JwtModule } from '@auth0/angular-jwt';
 import { ToastrModule } from 'ngx-toastr';
 import { AuthGuard } from './guard/auth-guard.service';
+import { ShoppingEditComponent } from './shopping-list/shopping-edit/shopping-edit.component';
+import { ShopingListComponent } from './shopping-list/shoping-list/shoping-list.component';
 
 export function tokenGetter() {
   return localStorage.getItem("jwt");
@@ -22,7 +24,9 @@ export function tokenGetter() {
     AppComponent,
     UsersListComponent,
     LoginComponent,
-    HomepageComponent
+    HomepageComponent,
+    ShoppingEditComponent,
+    ShopingListComponent
   ],
   imports: [
     BrowserModule,
