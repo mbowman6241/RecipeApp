@@ -11,7 +11,6 @@ import { LoginComponent } from './components/login/login.component';
 import { HomepageComponent } from './components/homepage/homepage.component';
 import { JwtModule } from '@auth0/angular-jwt';
 import { ToastrModule } from 'ngx-toastr';
-import { RecipelistComponent } from './components/recipelist/recipelist.component';
 import { AuthGuard } from './guard/auth-guard.service';
 
 export function tokenGetter() {
@@ -23,8 +22,7 @@ export function tokenGetter() {
     AppComponent,
     UsersListComponent,
     LoginComponent,
-    HomepageComponent,
-    RecipelistComponent,
+    HomepageComponent
   ],
   imports: [
     BrowserModule,

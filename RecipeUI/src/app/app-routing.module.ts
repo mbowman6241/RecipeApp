@@ -1,13 +1,12 @@
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 import { HomepageComponent } from './components/homepage/homepage.component';
 import { LoginComponent } from './components/login/login.component';
-import { RecipelistComponent } from './components/recipelist/recipelist.component';
 import { UsersListComponent } from './components/users/users-list/users-list.component';
 
 const routes: Routes = [
   {
-    path: '',
+    path: '', 
     component: HomepageComponent
   },
   {
@@ -18,14 +17,12 @@ const routes: Routes = [
     path: 'login',
     component: LoginComponent
   },
-  {
-    path: 'recipes',
-    component: RecipelistComponent
-  },
+  { path: 'recipes', loadChildren: () => import('./recipes/recipe.module').then(x => x.RecipeModule)},
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules })
+  ],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
