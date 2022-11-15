@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { User } from 'src/app/models/users.model';
 import { UsersService } from 'src/app/services/users.service';
+declare var window: any;
 
 @Component({
   selector: 'app-users-list',
@@ -25,8 +26,9 @@ export class UsersListComponent implements OnInit {
           console.log(JSON.stringify(response));
         }
       })
-    this.userModal = document.getElementById('myModal')
-
+    this.userModal = new window.bootstrap.Modal(
+      document.getElementById('myModal')
+    );
   }
 
   open() {
