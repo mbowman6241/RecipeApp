@@ -3,6 +3,8 @@
 
 <div class="container my-5">
     <h1>User List</h1>
+    <button type="button" class="btn btn-primary btn-lg" (click)="open()">Add New User</button>
+    
     <table class="table table-hover" *ngIf="users">
         <thead>
             <tr>
@@ -15,8 +17,36 @@
             <tr *ngFor="let user of users">
                 <td>{{user.id}}</td>
                 <td>{{user.userName}}</td>
-                <td>{{user.email}}</td>
+                <td>{{user.password}}</td>
             </tr>
         </tbody>
     </table>
 </div>
+
+<div class="modal" id="myModal" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Add New User</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form class="form-newUser" #userForm="ngForm">
+            <div class="container-fluid">
+              <label for="username" class="sr-only">User Name</label>
+              <input type="username" id="userName" name="userName" ngModel class="form-control" placeholder="User Name"
+                required autofocus>
+              <br />
+              <label for="password" class="sr-only">Password</label>
+              <input type="password" id="password" name="password" ngModel class="form-control" placeholder="Password" required>
+
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary" (click)="saveSomeThing(userForm)">Add User</button>
+        </div>
+      </div>
+    </div>
+  </div>

@@ -20,7 +20,7 @@ namespace RecipeApi.Controllers
         [HttpPost("login")]
         public ActionResult Login([FromBody] User user)
         {
-            var preAuthUser = _usersDbContext.Users.FirstOrDefault(u => u.UserName == user.UserName && u.Email == user.Email);
+            var preAuthUser = _usersDbContext.Users.FirstOrDefault(u => u.UserName == user.UserName && u.Password == user.Password);
 
             if (preAuthUser == null)
             {
@@ -35,7 +35,7 @@ namespace RecipeApi.Controllers
                     issuer: "https://localhost:5165",
                     audience: "https://localhost:5165",
                     claims: new List<Claim>(),
-                    expires: DateTime.Now.AddMinutes(5),
+                    expires: DateTime.Now.AddMinutes(60),
                     signingCredentials: signinCredentials
                 );
                 var tokenString = new JwtSecurityTokenHandler().WriteToken(tokeOptions);

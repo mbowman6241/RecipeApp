@@ -10,7 +10,6 @@ export class RecipeService {
   recipesChanged = new Subject<Recipe[]>();
   private recipes: Recipe[] = [];
 
-  // constructor(private slService: ShoppingListService) {}
   constructor() { }
   setRecipes(recipes: Recipe[]) {
     this.recipes = recipes;
@@ -24,10 +23,6 @@ export class RecipeService {
   getRecipe(index: number) {
     return this.recipes[index];
   }
-
-  // addIngredientsToShoppingList(ingredients: Ingredient[]) {
-  //   this.slService.addIngredients(ingredients);
-  // }
 
   addRecipe(recipe: Recipe) {
     this.recipes.push(recipe);

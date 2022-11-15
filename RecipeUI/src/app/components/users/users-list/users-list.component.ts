@@ -10,6 +10,9 @@ import { UsersService } from 'src/app/services/users.service';
 export class UsersListComponent implements OnInit {
 
   users: User[] = [];
+  closeResult: string = ''
+  userModal: any;
+
   constructor(private userService: UsersService) { }
 
   ngOnInit(): void {
@@ -20,6 +23,24 @@ export class UsersListComponent implements OnInit {
         },
         error: (response) => {
           console.log(JSON.stringify(response));
+        }
+      })
+    this.userModal = document.getElementById('myModal')
+
+  }
+
+  open() {
+    this.userModal.show();
+  }
+
+  saveSomeThing(user: any) {
+    this.userService.addNewUser(user)
+      .subscribe({
+        next: (response) => {
+          this.userModal.hide();
+        },
+        error: (response) => {
+          console.log('error adding user: ' + JSON.stringify(response));
         }
       })
   }

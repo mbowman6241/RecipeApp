@@ -26,16 +26,15 @@ const routes: Routes = [
 @NgModule({
   declarations: [RecipelistComponent,
     RecipeItemComponent,
-    HomepageComponent,
     RecipeDetailComponent],
   imports: [CommonModule,
     RouterModule.forChild(routes),
     FormsModule,
     ReactiveFormsModule
+    // NgModule
   ],
   exports: [RecipelistComponent,
     RecipeItemComponent,
-    HomepageComponent,
     RouterModule,
     RecipeDetailComponent],
   providers: []

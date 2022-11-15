@@ -8,11 +8,11 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { UsersListComponent } from './components/users/users-list/users-list.component';
 import { LoginComponent } from './components/login/login.component';
-import { HomepageComponent } from './components/homepage/homepage.component';
 import { JwtModule } from '@auth0/angular-jwt';
 import { ToastrModule } from 'ngx-toastr';
 import { AuthGuard } from './guard/auth-guard.service';
 import { SharedModule } from './shared/shared.module';
+import { HomepageComponent } from './components/homepage/homepage.component';
 
 export function tokenGetter() {
   return localStorage.getItem("jwt");
@@ -22,7 +22,8 @@ export function tokenGetter() {
   declarations: [
     AppComponent,
     UsersListComponent,
-    LoginComponent
+    LoginComponent,
+    HomepageComponent,
     
   ],
   imports: [
@@ -41,6 +42,7 @@ export function tokenGetter() {
   }),
   ToastrModule.forRoot(),
   SharedModule
+  // NgModule
   ],
   providers: [AuthGuard],
   bootstrap: [AppComponent]
